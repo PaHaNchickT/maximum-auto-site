@@ -24,7 +24,7 @@ module.exports = {
           colors: {
             background: 'white',
             primary: {
-              DEFAULT: 'black',
+              DEFAULT: '#CA0100',
             },
           },
         },
@@ -33,7 +33,7 @@ module.exports = {
           colors: {
             background: 'white',
             primary: {
-              DEFAULT: 'black',
+              DEFAULT: '#CA0100',
             },
           },
         },

@@ -23,8 +23,6 @@ const PageController = (props: { data: TItem[]; query: string }): ReactElement =
     setLoaded(true);
   }, [props.data]);
 
-  console.log(loaded, 'jopa');
-
   return (
     <>
       {mounted ? (
@@ -37,14 +35,14 @@ const PageController = (props: { data: TItem[]; query: string }): ReactElement =
                 <ViewSection data={itemsFiltering(props.data, decodedQuery)} />
               ) : (
                 <div className="w-full flex justify-center items-center">
-                  <Spinner color="danger" size="lg" />
+                  <Spinner color="primary" size="lg" />
                 </div>
               )}
             </section>
           </div>
         </main>
       ) : (
-        <Spinner color="danger" size="lg" />
+        <Spinner color="primary" size="lg" />
       )}
     </>
   );
