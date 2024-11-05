@@ -13,8 +13,6 @@ const PageController = (props: { data: TItem[] }): ReactElement => {
 
   useEffect(() => setMounted(true), []);
 
-  console.log(props.data);
-
   return (
     <>
       {mounted ? (
@@ -22,7 +20,7 @@ const PageController = (props: { data: TItem[] }): ReactElement => {
           <p className="text-[40px]">Автомобили Chery в СПб</p>
           <div className="flex justify-between">
             <FilterComp />
-            <ViewSection />
+            <ViewSection data={props.data}/>
           </div>
         </main>
       ) : (

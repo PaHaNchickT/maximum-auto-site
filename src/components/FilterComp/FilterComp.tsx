@@ -28,7 +28,7 @@ const FilterComp = (): ReactElement => {
           </div>
         ))}
       </div>
-      <Button radius="sm" className="my-[40px] text-[28px] h-[80px]">
+      <Button radius="sm" className="my-[40px] text-[28px] h-[80px] border-2 border-[#010C13] bg-transparent">
         Сбросить фильтр
       </Button>
     </section>

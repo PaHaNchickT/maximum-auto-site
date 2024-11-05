@@ -57,10 +57,11 @@ export const FILTER_DATA = [
   {
     label: 'Комплектация',
     array: [
-      ['Action', 'Techno', 'Travel', 'Luxury'],
-      ['Cosmo', 'Trek', 'Comfort', 'Family'],
-      ['Prestige', 'Elite', 'Dreamline'],
-      ['Speedline', 'Ultimate'],
+      ['Active', 'Tech Plus', 'Prime', 'Luxury'],
+      ['Lifestyle', 'LX', 'Comfort', 'Flagship'],
+      ['Platinum', 'Premium', 'President'],
+      ['Prestige', 'Elite', 'DLX'],
+      ['Supreme', 'Ultimate'],
     ],
   },
 ];
