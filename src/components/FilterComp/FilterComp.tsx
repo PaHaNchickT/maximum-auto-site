@@ -1,9 +1,33 @@
 import { Button } from '@nextui-org/react';
-import { type ReactElement } from 'react';
+import type { PressEvent } from '@react-types/shared';
+import { useEffect, useState, type ReactElement } from 'react';
 
 import { FILTER_DATA } from '@/constants/const-text-content';
 
 const FilterComp = (): ReactElement => {
+  const [opts, setOpts] = useState<{ [key: string]: string[] }>({ brand: [], volume: [], equipment: [] });
+
+  const clickHandler = (event: PressEvent): void => {
+    const tempState = { ...opts };
+
+    if (!opts[event.target.id].includes(event.target.textContent!)) {
+      tempState[event.target.id].push(event.target.textContent!);
+    } else {
+      const tempArray = tempState[event.target.id];
+      tempState[event.target.id] = tempArray.filter((item) => item !== event.target.textContent!);
+    }
+
+    setOpts(tempState);
+  };
+
+  const filterReseting = (): void => {
+    setOpts({ brand: [], volume: [], equipment: [] });
+  };
+
+  useEffect(() => {
+    console.log(opts);
+  }, [opts]);
+
   return (
     <section className="flex flex-col max-w-[500px]">
       <div className="flex flex-col">
@@ -11,15 +35,17 @@ const FilterComp = (): ReactElement => {
           <div key={itemIndex} className="flex flex-col gap-5 py-[30px] box-border border-b-2 border-[#9AA7AD]">
             <p className="text-[28px]">{filterItem.label}</p>
             <div className="flex flex-col gap-2.5">
-              {filterItem.array.map((brandArr, brandIndex) => (
+              {filterItem.array.map((itemsArr, brandIndex) => (
                 <div key={brandIndex} className="flex gap-2.5">
-                  {brandArr.map((brand) => (
+                  {itemsArr.map((item) => (
                     <Button
-                      key={brand}
-                      className="text-base min-w-0 px-5 py-2 border-2 border-[#010C13] bg-transparent"
+                      key={item}
+                      id={filterItem.key}
+                      className={`text-base min-w-0 px-5 py-2 border-2 border-[#010C13] ${opts[filterItem.key].includes(item) ? 'bg-[#A9A9A9]' : 'bg-transparent'}`}
                       radius="sm"
+                      onPress={(event) => clickHandler(event)}
                     >
-                      {brand}
+                      {item}
                     </Button>
                   ))}
                 </div>
@@ -28,7 +54,11 @@ const FilterComp = (): ReactElement => {
           </div>
         ))}
       </div>
-      <Button radius="sm" className="my-[40px] text-[28px] h-[80px] border-2 border-[#010C13] bg-transparent">
+      <Button
+        radius="sm"
+        className="my-[40px] text-[28px] h-[80px] border-2 border-[#010C13] bg-transparent"
+        onPress={filterReseting}
+      >
         Сбросить фильтр
       </Button>
     </section>

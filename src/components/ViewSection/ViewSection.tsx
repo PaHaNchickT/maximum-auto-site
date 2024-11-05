@@ -4,8 +4,6 @@ import { type ReactElement } from 'react';
 import type { TItem } from '@/types/types';
 
 const ViewSection = (props: { data: TItem[] }): ReactElement => {
-  console.log(props.data);
-
   return (
     <section className="flex flex-wrap gap-[42px] w-[922px]">
       {props.data.map((car, carIndex) => (

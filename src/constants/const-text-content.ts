@@ -45,6 +45,7 @@ export const TEXT_CONTENT = {
 export const FILTER_DATA = [
   {
     label: 'Бренд',
+    key: 'brand',
     array: [
       ['Chery', 'Haval', 'Geely'],
       ['Exeed', 'Omoda', 'Changan', 'Jaecoo'],
@@ -52,10 +53,12 @@ export const FILTER_DATA = [
   },
   {
     label: 'Объем двигателя',
+    key: 'volume',
     array: [['1,5 л.', '1,6 л.', '2,0 л.']],
   },
   {
     label: 'Комплектация',
+    key: 'equipment',
     array: [
       ['Active', 'Tech Plus', 'Prime', 'Luxury'],
       ['Lifestyle', 'LX', 'Comfort', 'Flagship'],
