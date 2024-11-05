@@ -18,7 +18,7 @@ const RootLayout = async ({
   return (
     <html lang="ru" suppressHydrationWarning={true}>
       <body className="font-['Tactic-Sans',sans-serif]">
-        <div className="w-screen min-h-screen flex flex-col justify-between">
+        <div className="min-h-screen flex flex-col justify-between">
           <Header />
           {children}
           <Footer />

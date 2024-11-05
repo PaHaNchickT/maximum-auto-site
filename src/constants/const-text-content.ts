@@ -41,3 +41,26 @@ export const TEXT_CONTENT = {
     reloadBtn: 'Перезагрузить страницу',
   },
 };
+
+export const FILTER_DATA = [
+  {
+    label: 'Бренд',
+    array: [
+      ['Chery', 'Haval', 'Geely'],
+      ['Exeed', 'Omoda', 'Changan', 'Jaecoo'],
+    ],
+  },
+  {
+    label: 'Объем двигателя',
+    array: [['1,5 л.', '1,6 л.', '2,0 л.']],
+  },
+  {
+    label: 'Комплектация',
+    array: [
+      ['Action', 'Techno', 'Travel', 'Luxury'],
+      ['Cosmo', 'Trek', 'Comfort', 'Family'],
+      ['Prestige', 'Elite', 'Dreamline'],
+      ['Speedline', 'Ultimate'],
+    ],
+  },
+];

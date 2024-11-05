@@ -18,8 +18,8 @@ const PageController = (props: { data: TItem[] }): ReactElement => {
   return (
     <>
       {mounted ? (
-        <main className="flex flex-col gap-[60px] px-[219px] pt-[100px] pb-[160px] bg-warning">
-          <p>Автомобили Chery в СПб</p>
+        <main className="flex flex-col gap-[60px] px-[219px] pt-[100px] pb-[160px] text-[#010C13]">
+          <p className="text-[40px]">Автомобили Chery в СПб</p>
           <div className="flex justify-between">
             <FilterComp />
             <ViewSection />
