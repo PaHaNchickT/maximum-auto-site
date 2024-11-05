@@ -1,11 +1,16 @@
+/* eslint-disable react-compiler/react-compiler */
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import { Button } from '@nextui-org/react';
 import type { PressEvent } from '@react-types/shared';
+import { useRouter } from 'next/navigation';
 import { useEffect, useState, type ReactElement } from 'react';
 
 import { FILTER_DATA } from '@/constants/const-text-content';
 
-const FilterComp = (): ReactElement => {
-  const [opts, setOpts] = useState<{ [key: string]: string[] }>({ brand: [], volume: [], equipment: [] });
+const FilterComp = (props: { opts: { [key: string]: string[] } }): ReactElement => {
+  const router = useRouter();
+  const [opts, setOpts] = useState<{ [key: string]: string[] }>(props.opts);
 
   const clickHandler = (event: PressEvent): void => {
     const tempState = { ...opts };
@@ -25,7 +30,9 @@ const FilterComp = (): ReactElement => {
   };
 
   useEffect(() => {
-    console.log(opts);
+    const query = new URLSearchParams({ filter: btoa(unescape(encodeURIComponent(JSON.stringify(opts)))) });
+
+    router.push(`?${query}`);
   }, [opts]);
 
   return (

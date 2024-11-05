@@ -18,10 +18,10 @@ const dataFetching = async (): Promise<TItem[]> => {
   return output;
 };
 
-const App = async (): Promise<ReactElement> => {
+const App = async (useSearchParams: { searchParams: { filter: string } }): Promise<ReactElement> => {
   const data = await dataFetching();
 
-  return <PageController data={data} />;
+  return <PageController data={data} query={useSearchParams.searchParams.filter} />;
 };
 
 export default App;
