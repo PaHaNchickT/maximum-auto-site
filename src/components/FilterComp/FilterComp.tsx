@@ -4,11 +4,15 @@
 import { Button } from '@nextui-org/react';
 import type { PressEvent } from '@react-types/shared';
 import { useRouter } from 'next/navigation';
+import type { Dispatch, SetStateAction} from 'react';
 import { useEffect, useState, type ReactElement } from 'react';
 
 import { FILTER_DATA } from '@/constants/const-text-content';
 
-const FilterComp = (props: { opts: { [key: string]: string[] } }): ReactElement => {
+const FilterComp = (props: {
+  opts: { [key: string]: string[] };
+  setLoaded: Dispatch<SetStateAction<boolean>>;
+}): ReactElement => {
   const router = useRouter();
   const [opts, setOpts] = useState<{ [key: string]: string[] }>(props.opts);
 
@@ -23,10 +27,12 @@ const FilterComp = (props: { opts: { [key: string]: string[] } }): ReactElement 
     }
 
     setOpts(tempState);
+    props.setLoaded(false);
   };
 
   const filterReseting = (): void => {
     setOpts({ brand: [], volume: [], equipment: [] });
+    props.setLoaded(false);
   };
 
   useEffect(() => {

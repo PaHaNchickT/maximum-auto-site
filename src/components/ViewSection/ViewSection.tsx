@@ -5,7 +5,7 @@ import type { TItem } from '@/types/types';
 
 const ViewSection = (props: { data: TItem[] }): ReactElement => {
   return (
-    <section className="flex flex-wrap gap-[42px] w-[922px]">
+    <>
       {props.data.length ? (
         props.data.map((car, carIndex) => (
           <div key={carIndex} className="w-[440px] h-[561px] flex flex-col justify-between">
@@ -34,7 +34,7 @@ const ViewSection = (props: { data: TItem[] }): ReactElement => {
           </div>
         </div>
       )}
-    </section>
+    </>
   );
 };
 
