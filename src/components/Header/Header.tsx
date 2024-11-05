@@ -1,11 +1,15 @@
 import { type ReactElement } from 'react';
 
-import { TEXT_CONTENT } from '@/constants/const-text-content';
+import { Logo } from '@/icons/Logo';
 
 const Header = (): ReactElement => {
   return (
-    <header className="h-[60px] bg-[#c0c0c0] flex justify-center items-center font-black">
-      <h1 className="text-2xl sm:text-3xl">{TEXT_CONTENT.header.headerTitle}</h1>
+    <header className="h-[108px] bg-black flex items-center text-white px-[219px]">
+      <div className="flex items-center gap-5">
+        <Logo />
+        <div className="w-[2px] h-[68px] bg-white"></div>
+        <h2 className="leading-6 tracking-[5%] font-normal">Официальный дилер Максимум </h2>
+      </div>
     </header>
   );
 };

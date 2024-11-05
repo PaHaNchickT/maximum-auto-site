@@ -16,7 +16,7 @@ const RootLayout = async ({
   children: React.ReactNode;
 }>): Promise<ReactElement> => {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
+    <html lang="ru" suppressHydrationWarning={true}>
       <body className="font-['Tactic-Sans',sans-serif]">
         <div className="w-screen min-h-screen flex flex-col justify-between">
           <Header />
