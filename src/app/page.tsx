@@ -1,24 +1,27 @@
-'use client';
+import { type ReactElement } from 'react';
 
-import { Spinner } from '@nextui-org/react';
-import { useEffect, useState, type ReactElement } from 'react';
+import PageController from '@/components/PageController/PageController';
+import { ENDPOINTS } from '@/constants/const-endpoints';
+import type { TItem } from '@/types/types';
 
-const App = (): ReactElement => {
-  const [mounted, setMounted] = useState(false);
+const dataFetching = async (): Promise<TItem[]> => {
+  const output: TItem[] = [];
 
-  useEffect(() => setMounted(true), []);
+  ENDPOINTS.forEach(async (endpoint) => {
+    const data = await fetch(endpoint).then((resp) => {
+      return resp.json();
+    });
 
-  return (
-    <>
-      {mounted ? (
-        <main className="flex justify-center">
-          <p>Test</p>
-        </main>
-      ) : (
-        <Spinner color="danger" size="lg" />
-      )}
-    </>
-  );
+    output.push(...data);
+  });
+
+  return output;
+};
+
+const App = async (): Promise<ReactElement> => {
+  const data = await dataFetching();
+
+  return <PageController data={data} />;
 };
 
 export default App;
