@@ -15,12 +15,12 @@ const ViewSection = (props: { data: TItem[] }): ReactElement => {
     <>
       {props.data.length ? (
         props.data.map((car, carIndex) => (
-          <div key={carIndex} className="w-[440px] h-[561px] flex flex-col justify-between">
+          <div key={carIndex} className="w-[440px] h-[556px] flex flex-col justify-between">
             <div className="flex flex-col">
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-[15px]">
                 <Image src={car.photos.imgs[0].url} alt={car.car_id} width={440} height={292} radius="none" />
                 <div className="text-[32px]">
-                  <p>{`${car.brandName} ${car.modelName}`}</p>
+                  <p className='font-black'>{`${car.brandName} ${car.modelName}`}</p>
                   <p>{car.Complectation}</p>
                 </div>
               </div>

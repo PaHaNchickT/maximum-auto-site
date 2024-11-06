@@ -4,7 +4,7 @@
 import { Button } from '@nextui-org/react';
 import type { PressEvent } from '@react-types/shared';
 import { useRouter } from 'next/navigation';
-import type { Dispatch, SetStateAction} from 'react';
+import type { Dispatch, SetStateAction } from 'react';
 import { useEffect, useState, type ReactElement } from 'react';
 
 import { FILTER_DATA } from '@/constants/const-text-content';
@@ -42,11 +42,14 @@ const FilterComp = (props: {
   }, [opts]);
 
   return (
-    <section className="flex flex-col max-w-[500px]">
-      <div className="flex flex-col">
+    <section className="flex flex-col w-[497px]">
+      <div className="flex flex-col gap-[1px]">
         {FILTER_DATA.map((filterItem, itemIndex) => (
-          <div key={itemIndex} className="flex flex-col gap-5 py-[30px] box-border border-b-2 border-[#9AA7AD]">
-            <p className="text-[28px]">{filterItem.label}</p>
+          <div
+            key={itemIndex}
+            className="flex flex-col gap-5 pt-[25px] pb-[27px] box-border border-b-2 border-[#9AA7AD]"
+          >
+            <p className="text-[28px] tracking-[0.01em]">{filterItem.label}</p>
             <div className="flex flex-col gap-2.5">
               {filterItem.array.map((itemsArr, brandIndex) => (
                 <div key={brandIndex} className="flex gap-2.5">
