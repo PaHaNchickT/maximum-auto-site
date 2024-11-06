@@ -1,4 +1,4 @@
-import { Button, Image } from '@nextui-org/react';
+import { Button, Image, Skeleton } from '@nextui-org/react';
 import { useRouter } from 'next/navigation';
 import { type ReactElement } from 'react';
 
@@ -18,9 +18,19 @@ const ViewSection = (props: { data: TItem[] }): ReactElement => {
           <div key={carIndex} className="w-[440px] h-[556px] flex flex-col justify-between">
             <div className="flex flex-col">
               <div className="flex flex-col gap-[15px]">
-                <Image src={car.photos.imgs[0].url} alt={car.car_id} width={440} height={292} radius="none" />
+                <div className="relative w-[440px] h-[292px]">
+                  <Image
+                    src={car.photos.imgs[0].url}
+                    alt={car.car_id}
+                    width="100%"
+                    radius="none"
+                    className="absolute"
+                  />
+                  <Skeleton className="absolute w-full h-full" />
+                </div>
+
                 <div className="text-[32px]">
-                  <p className='font-black'>{`${car.brandName} ${car.modelName}`}</p>
+                  <p className="font-black">{`${car.brandName} ${car.modelName}`}</p>
                   <p>{car.Complectation}</p>
                 </div>
               </div>
