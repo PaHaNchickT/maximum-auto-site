@@ -9,7 +9,7 @@ import { itemsFiltering } from '@/utils/itemsFiltering';
 import FilterComp from '../FilterComp/FilterComp';
 import ViewSection from '../ViewSection/ViewSection';
 
-const PageController = (props: { data: TItem[]; query: string }): ReactElement => {
+const MainPageController = (props: { data: TItem[]; query: string }): ReactElement => {
   const [loaded, setLoaded] = useState(true);
   const [mounted, setMounted] = useState(false);
 
@@ -48,4 +48,4 @@ const PageController = (props: { data: TItem[]; query: string }): ReactElement =
   );
 };
 
-export default PageController;
+export default MainPageController;
