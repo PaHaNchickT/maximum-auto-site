@@ -1,9 +1,16 @@
 import { Button, Image } from '@nextui-org/react';
+import { useRouter } from 'next/navigation';
 import { type ReactElement } from 'react';
 
 import type { TItem } from '@/types/types';
 
 const ViewSection = (props: { data: TItem[] }): ReactElement => {
+  const router = useRouter();
+
+  const clickHandler = (id: string): void => {
+    router.push(`/${id}`);
+  };
+
   return (
     <>
       {props.data.length ? (
@@ -21,7 +28,11 @@ const ViewSection = (props: { data: TItem[] }): ReactElement => {
                 {car.modificationName.split('л. ').join('/ ').split('с. ').join('с. / ')}
               </p>
             </div>
-            <Button id={car.car_id} className="bg-[#CA0100] text-[28px] text-white h-[80px]" radius="sm">
+            <Button
+              className="bg-[#CA0100] text-[28px] text-white h-[80px]"
+              radius="sm"
+              onPress={() => clickHandler(`${car.brandName}-${car.car_id}`)}
+            >
               Подробнее
             </Button>
           </div>
