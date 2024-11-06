@@ -11,7 +11,7 @@ const Carousel = (props: { imgs: TItemImg[] }): ReactElement => {
     <div className="flex flex-col justify-between items-center w-[868px]">
       <div className="w-full h-[712px] rounded-2xl relative overflow-hidden">
         <Image
-          alt={props.imgs[currentImg]._id}
+          alt={`promo-${props.imgs[currentImg]._id}`}
           width={1067}
           height={712}
           src={props.imgs[currentImg].url}
@@ -27,7 +27,3 @@ const Carousel = (props: { imgs: TItemImg[] }): ReactElement => {
 };
 
 export default Carousel;
-
-// 868 x 579
-
-// 1067 x 712
