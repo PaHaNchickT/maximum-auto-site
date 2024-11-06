@@ -19,8 +19,3 @@ export const itemsFiltering = (
   return output;
 };
 
-// { brand: [], volume: [], equipment: [] }
-// brandName
-// modificationName
-// Complectation
-
