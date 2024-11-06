@@ -5,17 +5,31 @@ import { ArrowIcon } from '@/icons/ArrowIcon';
 import type { TItemImg } from '@/types/types';
 
 const Carousel = (props: { imgs: TItemImg[] }): ReactElement => {
-  const controlBtns = ['left-[10px] rotate-180', 'right-[10px]'];
   const [currentImg, setCurrentImg] = useState(0);
 
-  console.log(setCurrentImg);
+  const controlBtns = [
+    {
+      styles: 'left-[10px] rotate-180',
+      callback: (): void => {
+        if (currentImg) setCurrentImg((value) => value - 1);
+      },
+    },
+    {
+      styles: 'right-[10px]',
+      callback: (): void => {
+        if (currentImg < props.imgs.length - 1) setCurrentImg((value) => value + 1);
+      },
+    },
+  ];
+
   return (
     <div className="flex flex-col justify-between items-center w-[868px]">
       <div className="w-full h-[712px] rounded-2xl relative overflow-hidden group/card">
-        {controlBtns.map((styles, index) => (
+        {controlBtns.map((button, index) => (
           <Button
             key={index}
-            className={`w-[60px] h-[60px] bg-[#F4F7F8] absolute z-[2] min-w-0 p-0 top-[calc((100%-60px)/2)] opacity-30 group-hover/card:opacity-100 ${styles}`}
+            className={`w-[60px] h-[60px] bg-[#F4F7F8] absolute z-[2] min-w-0 p-0 top-[calc((100%-60px)/2)] opacity-30 group-hover/card:opacity-100 ${button.styles}`}
+            onPress={button.callback}
           >
             <ArrowIcon />
           </Button>
