@@ -43,8 +43,14 @@ const Carousel = (props: { imgs: TItemImg[] }): ReactElement => {
         />
         <Skeleton className="absolute w-full h-full z-[0]" />
       </div>
-      <div className="w-[560px] h-[4px] bg-success">
-        <div className="h-full w-[140px] bg-black"></div>
+      <div className="w-[560px] h-[4px] bg-[#F4F7F8]">
+        <div
+          style={{
+            width: `calc(100% / ${props.imgs.length})`,
+            left: `calc((100% / ${props.imgs.length}) * ${currentImg})`,
+          }}
+          className="transition-all relative h-full bg-black"
+        ></div>
       </div>
     </div>
   );
