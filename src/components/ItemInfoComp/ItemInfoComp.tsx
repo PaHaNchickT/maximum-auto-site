@@ -4,7 +4,7 @@ import { type ReactElement } from 'react';
 import { Defence } from '@/icons/Defence';
 import type { TItem } from '@/types/types';
 
-import Slider from '../Slider/Slider';
+import Carousel from '../Carousel/Carousel';
 
 const ItemInfoComp = (props: { data: TItem }): ReactElement => {
   const formatter = new Intl.NumberFormat('ru', { useGrouping: true });
@@ -55,7 +55,7 @@ const ItemInfoComp = (props: { data: TItem }): ReactElement => {
             </div>
           </div>
         </div>
-        <Slider imgs={props.data.photos.imgs} />
+        <Carousel imgs={props.data.photos.imgs} />
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import { useState, type ReactElement } from 'react';
 
 import type { TItemImg } from '@/types/types';
 
-const Slider = (props: { imgs: TItemImg[] }): ReactElement => {
+const Carousel = (props: { imgs: TItemImg[] }): ReactElement => {
   const [currentImg, setCurrentImg] = useState(0);
   console.log(setCurrentImg);
 
@@ -26,7 +26,7 @@ const Slider = (props: { imgs: TItemImg[] }): ReactElement => {
   );
 };
 
-export default Slider;
+export default Carousel;
 
 // 868 x 579
 
