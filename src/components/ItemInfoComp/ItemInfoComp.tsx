@@ -20,27 +20,27 @@ const ItemInfoComp = (props: { data: TItem }): ReactElement => {
   ];
 
   return (
-    <div className="pl-[219px] pr-[165px]">
-      <div className="pt-[80px] pb-[40px] flex flex-col gap-5">
-        <h2 className="text-[40px]">{`${props.data.brandName} ${props.data.modelName} ${props.data.modelYear} года`}</h2>
+    <div className="pl-[216px] pr-[168px]">
+      <div className="pt-[74px] pb-[79px] flex flex-col gap-5">
+        <h2 className="text-[40px] font-black tracking-[0.035em]">{`${props.data.brandName} ${props.data.modelName} ${props.data.modelYear} года`}</h2>
         <p className="text-base text-[#9AA7AD]">{`VIN ${props.data.vin}`}</p>
       </div>
-      <div className="flex justify-between">
-        <div className="w-[626px] flex flex-col gap-[60px]">
-          <div className="flex flex-col gap-5">
-            <p className="text-[32px] text-[#CA0100] bg-[#F4F7F8] rounded-xl px-10 py-5">{`${formatter.format(props.data.price)} ₽`}</p>
-            <p className="text-[28px] bg-[#F4F7F8] rounded-xl px-10 py-5 flex items-center gap-5">
+      <div className="flex justify-between flex-wrap">
+        <div className="w-[620px] flex flex-col gap-[55px]">
+          <div className="flex flex-col gap-5 tracking-[0.035em]">
+            <p className="text-[32px] text-[#CA0100] bg-[#F4F7F8] rounded-xl px-10 py-[16px] font-black">{`${formatter.format(props.data.price)} ₽`}</p>
+            <p className="text-[28px] bg-[#F4F7F8] rounded-xl pl-[44px] py-5 flex items-center gap-[25px]">
               <Defence />
               Гарантия юр. чистоты
             </p>
           </div>
-          <div className="flex flex-col gap-[30px]">
-            <h2 className="text-[40px]">Характеристики</h2>
-            <div className="text-[28px] bg-[#F4F7F8] rounded-xl py-[60px] pl-[60px] flex flex-col gap-5">
+          <div className="flex flex-col gap-[28px]">
+            <h2 className="text-[40px] font-black tracking-[0.035em]">Характеристики</h2>
+            <div className="text-[28px] bg-[#F4F7F8] rounded-xl py-[59px] pl-[58px] flex flex-col gap-5">
               {infoOpts.map((item, index) => (
                 <div key={index} className="flex gap-10 items-center">
                   <div className="w-[90px] h-[90px] bg-[#010C13] rounded-lg"></div>
-                  <p>{item.textContent}</p>
+                  <p className="tracking-[0.015em]">{item.textContent}</p>
                 </div>
               ))}
             </div>
