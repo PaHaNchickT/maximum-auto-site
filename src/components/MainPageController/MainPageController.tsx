@@ -27,7 +27,7 @@ const MainPageController = (props: { data: TItem[]; query: string }): ReactEleme
     <>
       {mounted ? (
         <main className="flex flex-col gap-[60px] px-[219px] pt-[100px] pb-[160px] text-[#010C13]">
-          <p className="text-[40px]">{`Автомобили ${decodedQuery.brand.length ? decodedQuery.brand.join(', ') : ''} в СПб`}</p>
+          <h1 className="text-[40px]">{`Автомобили ${decodedQuery.brand.length ? decodedQuery.brand.join(', ') : ''} в СПб`}</h1>
           <div className="flex justify-between">
             <FilterComp opts={decodedQuery} setLoaded={setLoaded} />
             <section className="flex flex-wrap gap-[42px] w-[922px]">
