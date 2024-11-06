@@ -1,3 +1,4 @@
+import { Image } from '@nextui-org/react';
 import { type ReactElement } from 'react';
 
 import { Defence } from '@/icons/Defence';
@@ -10,12 +11,18 @@ const ItemInfoComp = (props: { data: TItem }): ReactElement => {
   const infoOpts = [
     {
       textContent: `${props.data.modelYear} год выпуска`,
+      src: 'images/conf-icon.png',
+      alt: 'conf-icon',
     },
     {
       textContent: props.data.modificationName.split('л. ').join('/ ').split('с. ').join('с. / '),
+      src: 'images/engine-icon.png',
+      alt: 'engine-icon',
     },
     {
       textContent: `КП - ${props.data.transmissionRu}`,
+      src: 'images/gear-icon.png',
+      alt: 'gear-icon',
     },
   ];
 
@@ -39,7 +46,9 @@ const ItemInfoComp = (props: { data: TItem }): ReactElement => {
             <div className="text-[28px] bg-[#F4F7F8] rounded-xl py-[59px] pl-[58px] flex flex-col gap-5">
               {infoOpts.map((item, index) => (
                 <div key={index} className="flex gap-10 items-center">
-                  <div className="w-[90px] h-[90px] bg-[#010C13] rounded-lg"></div>
+                  <div className="w-[90px] h-[90px] bg-[#010C13] rounded-lg flex justify-center items-center">
+                    <Image alt={item.alt} src={item.src} width={70} height={70} className="invert" />
+                  </div>
                   <p className="tracking-[0.015em]">{item.textContent}</p>
                 </div>
               ))}
