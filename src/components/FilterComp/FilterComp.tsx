@@ -31,7 +31,11 @@ const FilterComp = (props: {
   };
 
   const filterReseting = (): void => {
-    setOpts({ brand: [], volume: [], equipment: [] });
+    const emptyOpts = { brand: [], volume: [], equipment: [] };
+
+    if (JSON.stringify(opts) === JSON.stringify(emptyOpts)) return;
+
+    setOpts(emptyOpts);
     props.setLoaded(false);
   };
 
