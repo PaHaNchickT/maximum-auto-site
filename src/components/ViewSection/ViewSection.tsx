@@ -24,8 +24,8 @@ const ViewSection = (props: { data: TItem[] }): ReactElement => {
                   <Image
                     src={car.photos.imgs[0].url}
                     alt={car.car_id}
-                    width={windowWidth === 'md' ? 440 : 266}
-                    height={windowWidth === 'md' ? 292 : 180}
+                    width={windowWidth >= 768 ? 440 : 266}
+                    height={windowWidth >= 768 ? 292 : 180}
                     radius="none"
                     className="absolute translate-1/2 object-cover z-[1]"
                   />

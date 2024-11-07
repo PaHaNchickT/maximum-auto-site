@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export const useResize = (): 'sm' | 'md' => {
+export const useResize = (): number => {
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
@@ -15,5 +15,5 @@ export const useResize = (): 'sm' | 'md' => {
     };
   }, []);
 
-  return width < 768 ? 'sm' : 'md';
+  return width;
 };
