@@ -26,11 +26,11 @@ const MainPageController = (props: { data: TItem[]; query: string }): ReactEleme
   return (
     <>
       {mounted ? (
-        <main className="flex flex-col gap-[60px] px-[216px] pt-[93px] pb-[160px] text-[#010C13]">
-          <h1 className="text-[40px] font-black tracking-[0.035em]">{`Автомобили ${decodedQuery.brand.length ? decodedQuery.brand.join(', ') : ''} в СПб`}</h1>
-          <div className="flex justify-between">
+        <main className="flex flex-col px-5 pt-[30px] pb-[160px] text-[#010C13] md:pt-[93px] md:px-[116px] lg:px-[216px] 2xl:gap-[60px]">
+          <h1 className="text-[20px] font-black tracking-[0.035em] md:text-[40px]">{`Автомобили ${decodedQuery.brand.length ? decodedQuery.brand.join(', ') : ''} в СПб`}</h1>
+          <div className="flex justify-between items-center flex-col 2xl:items-start 2xl:flex-row">
             <FilterComp opts={decodedQuery} setLoaded={setLoaded} />
-            <section className="flex flex-wrap gap-[42px] w-[922px]">
+            <section className="flex flex-wrap gap-[42px] justify-center w-full 2xl:justify-between 2xl:w-[440px] 3xl:justify-start 3xl:w-[922px]">
               {loaded ? (
                 <ViewSection data={itemsFiltering(props.data, decodedQuery)} />
               ) : (

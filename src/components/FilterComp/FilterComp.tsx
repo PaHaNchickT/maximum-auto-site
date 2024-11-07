@@ -46,22 +46,22 @@ const FilterComp = (props: {
   }, [opts]);
 
   return (
-    <section className="flex flex-col w-[497px]">
+    <section className="flex flex-col w-full 2xl:w-[497px]">
       <div className="flex flex-col gap-[1px]">
         {FILTER_DATA.map((filterItem, itemIndex) => (
           <div
             key={itemIndex}
-            className="flex flex-col gap-5 pt-[25px] pb-[27px] box-border border-b-2 border-[#9AA7AD]"
+            className={`flex flex-col gap-5 pt-[25px] pb-[27px] box-border border-b-0 border-[#9AA7AD] md:border-b-2 ${filterItem.className}`}
           >
-            <p className="text-[28px] tracking-[0.01em]">{filterItem.label}</p>
-            <div className="flex flex-col gap-2.5">
+            <p className="text-[28px] tracking-[0.01em] hidden md:block">{filterItem.label}</p>
+            <div className="flex flex-row flex-wrap gap-[4px] md:gap-2.5 2xl:flex-col">
               {filterItem.array.map((itemsArr, brandIndex) => (
-                <div key={brandIndex} className="flex gap-2.5">
+                <div key={brandIndex} className="flex gap-[4px] md:gap-2.5">
                   {itemsArr.map((item) => (
                     <Button
                       key={item}
                       id={filterItem.key}
-                      className={`text-base min-w-0 px-5 py-2 border-2 border-[#010C13] ${opts[filterItem.key].includes(item) ? 'bg-[#A9A9A9]' : 'bg-transparent'}`}
+                      className={`text-[8px] min-w-0 px-2.5 h-[20px] border-2 border-[#010C13] md:px-5 md:h-[40px] md:text-base ${opts[filterItem.key].includes(item) ? 'bg-[#A9A9A9]' : 'bg-transparent'}`}
                       radius="sm"
                       onPress={(event) => clickHandler(event)}
                     >
@@ -76,7 +76,7 @@ const FilterComp = (props: {
       </div>
       <Button
         radius="sm"
-        className="my-[40px] text-[28px] h-[80px] border-2 border-[#010C13] bg-transparent"
+        className="my-[40px] text-[28px] h-[80px] border-2 border-[#010C13] bg-transparent hidden md:block"
         onPress={filterReseting}
       >
         Сбросить фильтр

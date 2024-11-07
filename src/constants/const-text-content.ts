@@ -50,11 +50,13 @@ export const FILTER_DATA = [
       ['Chery', 'Haval', 'Geely'],
       ['Exeed', 'Omoda', 'Changan', 'Jaecoo'],
     ],
+    className: '',
   },
   {
     label: 'Объем двигателя',
     key: 'volume',
     array: [['1.4 л.', '1.5 л.', '1.6 л.']],
+    className: 'hidden md:block',
   },
   {
     label: 'Комплектация',
@@ -66,5 +68,6 @@ export const FILTER_DATA = [
       ['Prestige', 'Elite', 'DLX'],
       ['Supreme', 'Ultimate'],
     ],
+    className: 'hidden md:block',
   },
 ];

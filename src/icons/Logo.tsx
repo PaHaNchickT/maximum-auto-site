@@ -4,16 +4,14 @@ import React from 'react';
 export const Logo = ({
   fill = 'currentColor',
   filled,
-  size,
   height,
   width,
   className,
 }: {
   fill?: string;
   filled?: boolean;
-  size?: string;
-  height?: string;
-  width?: string;
+  height?: number;
+  width?: number;
   className?: string;
 }): ReactNode => {
   return (
@@ -22,8 +20,8 @@ export const Logo = ({
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 154 42"
       fill={filled ? fill : 'none'}
-      width={size || width || 154}
-      height={size || height || 42}
+      width={width}
+      height={height}
       className={className}
     >
       <path
