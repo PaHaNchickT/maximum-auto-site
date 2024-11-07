@@ -24,7 +24,7 @@ const ItemPageController = (props: { data: TItem[]; opts: string }): ReactElemen
       {mounted ? (
         <main className="flex flex-col gap-[80px] text-[#010C13]">
           <ItemInfoComp data={currentItem} />
-          <Banner brandName={currentItem.brandName} />
+          <Banner brandName={`${currentItem.brandName} ${currentItem.modelName}`} />
         </main>
       ) : (
         <Spinner color="primary" size="lg" />
