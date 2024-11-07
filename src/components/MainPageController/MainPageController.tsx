@@ -34,7 +34,7 @@ const MainPageController = (props: { data: TItem[]; query: string }): ReactEleme
               {loaded ? (
                 <ViewSection data={itemsFiltering(props.data, decodedQuery)} />
               ) : (
-                <div className="w-full min-h-screen flex justify-center items-center 2xl:min-h-0">
+                <div className="w-full min-h-[400px] flex justify-center items-center 2xl:min-h-0">
                   <Spinner color="primary" size="lg" />
                 </div>
               )}

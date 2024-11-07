@@ -51,10 +51,10 @@ const ViewSection = (props: { data: TItem[] }): ReactElement => {
           </div>
         ))
       ) : (
-        <div className="w-full flex justify-center items-center">
+        <div className="w-full flex justify-center items-center min-h-[400px] 2xl:min-h-0">
           <div>
-            <p className="text-center text-[28px]">По вашему запросу ничего не найдено!</p>
-            <p className="text-center text-[24px]">Попробуйте изменить параметры фильтров</p>
+            <p className="text-center text-[20px] md:text-[28px]">По вашему запросу ничего не найдено!</p>
+            <p className="text-center text-base md:text-[24px]">Попробуйте изменить параметры фильтров</p>
           </div>
         </div>
       )}
