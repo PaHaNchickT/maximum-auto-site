@@ -10,7 +10,7 @@ const Header = (): ReactElement => {
   const windowWidth = useResize();
 
   return (
-    <header className="h-[50px] bg-[#010C13] flex items-center text-white px-[7px] md:h-[108px] md:px-[116px] lg:px-[216px]">
+    <header className="h-[50px] bg-[#010C13] flex items-center text-white px-[7px] md:h-[108px] md:px-[116px] 2xl:px-[216px]">
       <div className="flex items-center gap-4 md:gap-5">
         <Link href="/">
           <Logo width={windowWidth === 'md' ? 154 : 111} height={windowWidth === 'md' ? 42 : 28} />

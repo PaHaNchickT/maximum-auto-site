@@ -23,7 +23,7 @@ const Carousel = (props: { imgs: TItemImg[] }): ReactElement => {
   ];
 
   return (
-    <div className="flex flex-col justify-between items-center w-[868px]">
+    <div className="flex flex-col justify-between gap-10 items-center w-[868px] 3xl:gap-0">
       <div className="w-full h-[712px] rounded-2xl relative overflow-hidden group/card">
         {controlBtns.map((button, index) => (
           <Button

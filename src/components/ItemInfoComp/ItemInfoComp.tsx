@@ -27,23 +27,23 @@ const ItemInfoComp = (props: { data: TItem }): ReactElement => {
   ];
 
   return (
-    <div className="pl-[216px] pr-[168px]">
+    <div className="px-[116px] 2xl:pl-[216px] 2xl:pr-[168px]">
       <div className="pt-[74px] pb-[79px] flex flex-col gap-5">
         <h2 className="text-[40px] font-black tracking-[0.035em]">{`${props.data.brandName} ${props.data.modelName} ${props.data.modelYear} года`}</h2>
         <p className="text-base text-[#9AA7AD]">{`VIN ${props.data.vin}`}</p>
       </div>
-      <div className="flex justify-between flex-wrap">
-        <div className="w-[620px] flex flex-col gap-[55px]">
-          <div className="flex flex-col gap-5 tracking-[0.035em]">
+      <div className="flex flex-col justify-between items-center gap-10 flex-wrap 3xl:items-stretch 3xl:gap-0 3xl:flex-row">
+        <div className="w-full flex flex-col gap-[55px] 3xl:w-[620px]">
+          <div className="flex flex-row flex-wrap gap-5 tracking-[0.035em] 3xl:flex-col">
             <p className="text-[32px] text-[#CA0100] bg-[#F4F7F8] rounded-xl px-10 py-[16px] font-black">{`${formatter.format(props.data.price)} ₽`}</p>
-            <p className="text-[28px] bg-[#F4F7F8] rounded-xl pl-[44px] py-5 flex items-center gap-[25px]">
+            <p className="text-[28px] bg-[#F4F7F8] rounded-xl pl-[44px] pr-[44px] py-5 flex items-center gap-[25px] 3xl:pr-0">
               <Defence />
               Гарантия юр. чистоты
             </p>
           </div>
           <div className="flex flex-col gap-[28px]">
             <h2 className="text-[40px] font-black tracking-[0.035em]">Характеристики</h2>
-            <div className="text-[28px] bg-[#F4F7F8] rounded-xl py-[59px] pl-[58px] flex flex-col gap-5">
+            <div className="text-[28px] bg-[#F4F7F8] rounded-xl py-[59px] pl-[58px] pr-[58px] flex flex-row justify-between flex-wrap gap-5 3xl:flex-col 3xl:pr-0">
               {infoOpts.map((item, index) => (
                 <div key={index} className="flex gap-10 items-center">
                   <div className="w-[90px] h-[90px] bg-[#010C13] rounded-lg flex justify-center items-center">
