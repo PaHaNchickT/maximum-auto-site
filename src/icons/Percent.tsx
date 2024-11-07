@@ -8,6 +8,7 @@ export const Percent = ({
   height,
   width,
   className,
+  clipPath,
 }: {
   fill?: string;
   filled?: boolean;
@@ -15,6 +16,7 @@ export const Percent = ({
   height?: string;
   width?: string;
   className?: string;
+  clipPath?: string;
 }): ReactNode => {
   return (
     <svg
@@ -25,6 +27,7 @@ export const Percent = ({
       width={size || width || 431}
       height={size || height || 354}
       className={className}
+      clipPath={clipPath}
     >
       <g filter="url(#filter0_d_242_349)">
         <path
@@ -56,6 +59,9 @@ export const Percent = ({
           <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_242_349" />
           <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_242_349" result="shape" />
         </filter>
+        <clipPath id="cut-off-bottom">
+          <rect x="290" y="190" width="200" height="165" rx="55" ry="55" style={{ rotate: '-5.39deg' }} />
+        </clipPath>
       </defs>
     </svg>
   );
