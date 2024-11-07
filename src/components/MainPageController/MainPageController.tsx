@@ -3,6 +3,7 @@
 import { Spinner } from '@nextui-org/react';
 import { useEffect, useState, type ReactElement } from 'react';
 
+import { useResize } from '@/hooks/useResize';
 import type { TItem } from '@/types/types';
 import { itemsFiltering } from '@/utils/itemsFiltering';
 
@@ -10,6 +11,7 @@ import FilterComp from '../FilterComp/FilterComp';
 import ViewSection from '../ViewSection/ViewSection';
 
 const MainPageController = (props: { data: TItem[]; query: string }): ReactElement => {
+  const windowWidth = useResize();
   const [loaded, setLoaded] = useState(true);
   const [mounted, setMounted] = useState(false);
 
@@ -32,7 +34,7 @@ const MainPageController = (props: { data: TItem[]; query: string }): ReactEleme
             <FilterComp opts={decodedQuery} setLoaded={setLoaded} />
             <section className="flex flex-wrap gap-[18px] justify-center w-full md:gap-[42px] 2xl:justify-between 2xl:w-[440px] 3xl:justify-start 3xl:w-[922px]">
               {loaded ? (
-                <ViewSection data={itemsFiltering(props.data, decodedQuery)} />
+                <ViewSection data={itemsFiltering(props.data, decodedQuery, windowWidth)} />
               ) : (
                 <div className="w-full min-h-[400px] flex justify-center items-center 2xl:min-h-0">
                   <Spinner color="primary" size="lg" />
