@@ -46,23 +46,23 @@ const FilterComp = (props: {
   }, [opts]);
 
   return (
-    <section className="flex flex-col w-full 2xl:w-[497px]">
+    <section className="flex flex-col w-full 2xl:w-[497px] self-start">
       <div className="flex flex-col gap-[1px]">
         {FILTER_DATA.map((filterItem, itemIndex) => (
           <div
             key={itemIndex}
-            className={`flex flex-col gap-5 pt-[25px] pb-[27px] box-border border-b-0 border-[#9AA7AD] md:border-b-2 ${filterItem.className}`}
+            className={`flex flex-col gap-5 pt-[19px] pb-[27px] box-border border-b-0 border-[#9AA7AD] md:pt-[28px] md:border-b-2 ${filterItem.className}`}
           >
-            <p className="text-[28px] tracking-[0.01em] hidden md:block">{filterItem.label}</p>
+            <p className="text-[28px] tracking-[0.01em] hidden mb-5 md:block">{filterItem.label}</p>
             <div className="flex flex-row flex-wrap gap-[4px] md:gap-2.5 2xl:flex-col">
               {filterItem.array.map((itemsArr, brandIndex) => (
-                <div key={brandIndex} className="flex gap-[4px] md:gap-2.5">
+                <div key={brandIndex} className="flex flex-wrap gap-[4px] md:gap-2.5">
                   {itemsArr.map((item) => (
                     <Button
                       key={item}
                       id={filterItem.key}
-                      className={`text-[8px] min-w-0 px-2.5 h-[20px] border-2 border-[#010C13] md:px-5 md:h-[40px] md:text-base ${opts[filterItem.key].includes(item) ? 'bg-[#A9A9A9]' : 'bg-transparent'}`}
-                      radius="sm"
+                      className={`text-[8px] min-w-0 px-[8px] h-[19px] border-1 border-[#010C13] rounded-[4px] md:rounded-[8px] md:border-2 md:px-5 md:h-[40px] md:text-base ${opts[filterItem.key].includes(item) ? 'bg-[#A9A9A9]' : 'bg-transparent'}`}
+                      radius="none"
                       onPress={(event) => clickHandler(event)}
                     >
                       {item}
