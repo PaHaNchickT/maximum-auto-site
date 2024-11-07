@@ -15,9 +15,13 @@ const Banner = (props: { brandName: string }): ReactElement => {
           Оформить
         </Button>
       </div>
-      <Percent />
+      <div className="absolute w-[100px] h-[100px] bg-warning">
+        <Percent />
+      </div>
     </div>
   );
 };
 
 export default Banner;
+
+// bg-[url('/images/banner-promo.png')]
