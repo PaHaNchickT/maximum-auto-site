@@ -22,9 +22,10 @@ const ViewSection = (props: { data: TItem[] }): ReactElement => {
                   <Image
                     src={car.photos.imgs[0].url}
                     alt={car.car_id}
-                    width="100%"
+                    width={440}
+                    height={292}
                     radius="none"
-                    className="absolute"
+                    className="absolute translate-1/2 object-cover z-[1]"
                   />
                   <Skeleton className="absolute w-full h-full" />
                 </div>
