@@ -22,7 +22,7 @@ const ItemPageController = (props: { data: TItem[]; opts: string }): ReactElemen
   return (
     <>
       {mounted ? (
-        <main className="flex flex-col gap-[80px] text-[#010C13]">
+        <main className="flex flex-col gap-10 text-[#010C13] md:gap-[80px]">
           <ItemInfoComp data={currentItem} />
           <Banner brandName={`${currentItem.brandName} ${currentItem.modelName}`} />
         </main>

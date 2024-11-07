@@ -5,13 +5,13 @@ import { Percent } from '@/icons/Percent';
 
 const Banner = (props: { brandName: string }): ReactElement => {
   return (
-    <div className="relative h-[686px] bg-gradient-to-r from-[#00A8CD] to-[#047DBF] pb-[64px] pt-[148px] px-[116px] text-white px-[116px] 2xl:h-[836px] 2xl:pl-[216px]">
-      <div className="relative flex flex-col gap-[55px] items-start z-[4]">
-        <p className="font-black text-[40px] tracking-[0.037em]">{`Кредит на новый ${props.brandName}`}</p>
-        <p className="text-[28px] w-[477px] tracking-[0.01em] leading-snug">
+    <div className="relative h-auto bg-gradient-to-r from-[#00A8CD] to-[#047DBF] p-5 text-white md:h-[686px] md:pb-[64px] md:pt-[148px] md:px-[116px] 2xl:pr-0 2xl:h-[836px] 2xl:pl-[216px]">
+      <div className="relative flex flex-col gap-5 items-start z-[4] md:gap-[55px]">
+        <p className="font-black text-[20px] tracking-[0.037em] md:text-[40px]">{`Кредит на новый ${props.brandName}`}</p>
+        <p className="text-[14px] w-full tracking-[0.01em] leading-snug md:w-[477px] md:text-[28px]">
           Оформите кредит на любой автомобиль ассортимента дилерского центра «Максимум»
         </p>
-        <Button color="primary" className="text-[28px] px-[134px] h-[80px] tracking-[0.037em]">
+        <Button color="primary" className="text-[14px] px-[93px] h-[40px] tracking-[0.037em] md:h-[80px] md:px-[134px] md:text-[28px]">
           Оформить
         </Button>
       </div>
