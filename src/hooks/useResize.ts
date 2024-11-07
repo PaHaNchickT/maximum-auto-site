@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 
 export const useResize = (): 'sm' | 'md' => {
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(0);
 
   useEffect(() => {
+    setWidth(window.innerWidth);
+
     const handleResize = (event: Event): void => {
       setWidth((event.target as Window).innerWidth);
     };
