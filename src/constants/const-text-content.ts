@@ -46,8 +46,7 @@ export const FILTER_DATA = [
   {
     label: 'Бренд',
     key: 'brand',
-    array: [['Chery']],
-    // array: [['Chery', 'Haval', 'Geely', 'Exeed', 'Omoda', 'Changan', 'Jaecoo']],
+    array: [['Chery', 'Haval', 'Geely', 'Exeed', 'Omoda', 'Changan', 'Jaecoo']],
     className: 'block md:hidden',
   },
   {
