@@ -1,7 +1,7 @@
 import { type ReactElement } from 'react';
 
 import ItemPageController from '@/components/ItemPageController/ItemPageController';
-import { dataFetching } from '@/services/dataFerching';
+import { dataFetching } from '@/services/dataFetching';
 
 const CarPage = async (useSearchParams: { params: { page: string } }): Promise<ReactElement> => {
   const data = await dataFetching();

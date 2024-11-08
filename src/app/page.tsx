@@ -8,5 +8,5 @@ const App = async (useSearchParams: { searchParams: { filter: string } }): Promi
 
   return <MainPageController data={data} query={useSearchParams.searchParams.filter} />;
 };
-rzdxrxdrdr
+
 export default App;
