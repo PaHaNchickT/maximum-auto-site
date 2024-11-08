@@ -16,7 +16,7 @@ export default function NotFound(): ReactElement {
           <p className="text-3xl text-center sm:text-4xl">{TEXT_CONTENT.error.notFoundTitle}</p>
           <p className="text-sm sm:text-xl">{TEXT_CONTENT.error.notFoundMsg}</p>
         </div>
-        <Button onClick={() => router.push('/')} color="danger">
+        <Button onClick={() => router.push('/')} color="primary">
           {TEXT_CONTENT.error.homeBtn}
         </Button>
       </div>
