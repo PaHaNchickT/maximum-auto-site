@@ -1,6 +1,7 @@
 import { Button } from '@nextui-org/react';
 import { type ReactElement } from 'react';
 
+import { TEXT_CONTENT } from '@/constants/const-text-content';
 import { Percent } from '@/icons/Percent';
 
 const Banner = (props: { brandName: string }): ReactElement => {
@@ -9,10 +10,13 @@ const Banner = (props: { brandName: string }): ReactElement => {
       <div className="relative flex flex-col gap-5 items-start z-[4] md:gap-[55px]">
         <p className="font-black text-[20px] tracking-[0.037em] md:text-[40px]">{`Кредит на новый ${props.brandName}`}</p>
         <p className="text-[14px] w-full tracking-[0.01em] leading-snug md:w-[477px] md:text-[28px]">
-          Оформите кредит на любой автомобиль ассортимента дилерского центра «Максимум»
+          {TEXT_CONTENT.itemPage.bannerTitle}
         </p>
-        <Button color="primary" className="text-[14px] px-[93px] h-[40px] tracking-[0.037em] md:h-[80px] md:px-[134px] md:text-[28px]">
-          Оформить
+        <Button
+          color="primary"
+          className="text-[14px] px-[93px] h-[40px] tracking-[0.037em] md:h-[80px] md:px-[134px] md:text-[28px]"
+        >
+          {TEXT_CONTENT.itemPage.bannerBtn}
         </Button>
       </div>
       <div className="absolute top-[110px] right-[240px] z-[0] hidden 3xl:block">
@@ -27,5 +31,3 @@ const Banner = (props: { brandName: string }): ReactElement => {
 };
 
 export default Banner;
-
-// bg-[url('/images/banner-promo.png')]

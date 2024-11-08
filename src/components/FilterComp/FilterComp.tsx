@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import type { Dispatch, SetStateAction } from 'react';
 import { useEffect, useState, type ReactElement } from 'react';
 
-import { FILTER_DATA } from '@/constants/const-text-content';
+import { FILTER_DATA, TEXT_CONTENT } from '@/constants/const-text-content';
 
 const FilterComp = (props: {
   opts: { [key: string]: string[] };
@@ -79,7 +79,7 @@ const FilterComp = (props: {
         className="my-[40px] text-[28px] h-[80px] border-2 border-[#010C13] bg-transparent hidden md:block"
         onPress={filterReseting}
       >
-        Сбросить фильтр
+        {TEXT_CONTENT.mainPage.resetBtn}
       </Button>
     </section>
   );

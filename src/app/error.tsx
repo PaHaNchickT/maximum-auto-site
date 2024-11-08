@@ -13,8 +13,8 @@ const Error = (): ReactElement => {
           <p className="text-3xl text-center sm:text-4xl">{TEXT_CONTENT.error.errorTitle}</p>
           <p className="text-center text-xl sm:text-2xl">{TEXT_CONTENT.error.errorMsg}</p>
         </div>
-        <Button onClick={() => location.reload()} color="primary">
-          {TEXT_CONTENT.error.reloadBtn}
+        <Button onClick={() => window.history.back()} color="primary">
+          {TEXT_CONTENT.error.backBtn}
         </Button>
       </div>
     </div>

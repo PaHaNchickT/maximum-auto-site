@@ -1,6 +1,7 @@
 import { Image } from '@nextui-org/react';
 import { type ReactElement } from 'react';
 
+import { TEXT_CONTENT } from '@/constants/const-text-content';
 import { useResize } from '@/hooks/useResize';
 import { Defence } from '@/icons/Defence';
 import type { TItem } from '@/types/types';
@@ -41,11 +42,13 @@ const ItemInfoComp = (props: { data: TItem }): ReactElement => {
             <p className="w-full flex items-center text-base text-[#CA0100] bg-[#F4F7F8] rounded-xl px-10 h-[82px] font-black md:text-[32px]">{`${formatter.format(props.data.price)} ₽`}</p>
             <p className="w-full text-base bg-[#F4F7F8] rounded-xl pl-[44px] pr-[44px] h-[82px] flex items-center gap-[25px] md:text-[28px] 3xl:pr-0 ">
               <Defence />
-              Гарантия юр. чистоты
+              {TEXT_CONTENT.itemPage.legal}
             </p>
           </div>
           <div className="flex flex-col gap-3 md:gap-[28px]">
-            <h2 className="text-[20px] font-black tracking-[0.035em] md:text-[40px]">Характеристики</h2>
+            <h2 className="text-[20px] font-black tracking-[0.035em] md:text-[40px]">
+              {TEXT_CONTENT.itemPage.characteristics}
+            </h2>
             <div className="text-[12px] bg-[#F4F7F8] rounded-xl p-5 flex flex-row justify-between flex-wrap gap-1 md:py-[59px] md:px-[58px] md:gap-5 md:text-[28px] 3xl:flex-col 3xl:pr-0">
               {infoOpts.map((item, index) => (
                 <div key={index} className="flex gap-5 items-center md:gap-10">

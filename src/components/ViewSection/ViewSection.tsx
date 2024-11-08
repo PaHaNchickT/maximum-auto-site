@@ -2,6 +2,7 @@ import { Button, Image, Skeleton } from '@nextui-org/react';
 import { useRouter } from 'next/navigation';
 import { type ReactElement } from 'react';
 
+import { TEXT_CONTENT } from '@/constants/const-text-content';
 import { useResize } from '@/hooks/useResize';
 import type { TItem } from '@/types/types';
 
@@ -49,15 +50,15 @@ const ViewSection = (props: { data: TItem[] }): ReactElement => {
               radius="sm"
               onPress={() => clickHandler(`${car.brandName}-${car.car_id}`)}
             >
-              Подробнее
+              {TEXT_CONTENT.mainPage.moreBtn}
             </Button>
           </div>
         ))
       ) : (
         <div className="w-full flex justify-center items-center min-h-[400px] 2xl:min-h-0">
           <div>
-            <p className="text-center text-[20px] md:text-[28px]">По вашему запросу ничего не найдено!</p>
-            <p className="text-center text-base md:text-[24px]">Попробуйте изменить параметры фильтров</p>
+            <p className="text-center text-[20px] md:text-[28px]">{TEXT_CONTENT.mainPage.notFoundTitle}</p>
+            <p className="text-center text-base md:text-[24px]">{TEXT_CONTENT.mainPage.notFoundSubTitle}</p>
           </div>
         </div>
       )}
